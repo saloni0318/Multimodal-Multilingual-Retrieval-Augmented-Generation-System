@@ -1,0 +1,667 @@
+[
+  {
+    "text": "Leveraging user profile attributes for improving \npedagogical accuracy of learning pathways \n \n  Tanmay Sinha \nAnkit Banka \n                           Dae Ki Kang* \n Department of Computer Science \nDepartment of Computer Science \n              Department of Computer Engineering \nVellore Institute of Technology \nVellore Institute of Technology \n                           Dongseo University \nChennai 600127, India \nChennai 600127, India \n                          Busan 617716, Korea \ntanmay.sinha655@gmail.com ",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 0,
+    "modality": "text"
+  },
+  {
+    "text": "                 Busan 617716, Korea \ntanmay.sinha655@gmail.com \nankitbanka17@gmail.com \n                         dkkang@dongseo.ac.kr \n \n                                                          \n* Corresponding author: Tel.: +82513201724, Email: dkkang@dongseo.ac.kr \n \nAbstract - In recent years, with the enormous explosion of \nweb based learning resources, personalization has become a \ncritical factor for the success of services that wish to leverage the \npower of Web 2.0. However, the relevance, signifi",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 1,
+    "modality": "text"
+  },
+  {
+    "text": " leverage the \npower of Web 2.0. However, the relevance, significance and \nimpact of tailored content delivery in the learning domain is still \nquestionable. Apart from considering only interaction based \nfeatures like ratings and inferring learner preferences from them, \nif these services were to incorporate innate user profile attributes \nwhich affect learning activities, the quality of recommendations \nproduced could be vastly improved. Recognizing the crucial role \nof effective guidance in informal educ",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 2,
+    "modality": "text"
+  },
+  {
+    "text": "gnizing the crucial role \nof effective guidance in informal educational settings, we provide \na principled way of utilizing multiple sources of information from \nthe user profile itself for the recommendation task. We explore \nfactors that affect the choice of learning resources and explain in \nwhat way are they helpful to improve the pedagogical accuracy of \nlearning \nobjects \nrecommended. \nThrough \na \nsystematical \napplication of machine learning techniques, we further provide a \ntechnological solution to",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 3,
+    "modality": "text"
+  },
+  {
+    "text": "ning techniques, we further provide a \ntechnological solution to convert these indirectly mapped learner \nspecific attributes into a direct mapping with the learning \nresources. This mapping has a distinct advantage of tagging \nlearning resources to make their metadata more informative. The \nresults of our empirical study depict the similarity of nominal \nlearning attributes with respect to each other. We further succeed \nin capturing the learner subset, whose preferences are most likely \nto be an indicatio",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 4,
+    "modality": "text"
+  },
+  {
+    "text": "er subset, whose preferences are most likely \nto be an indication of learning resource usage. Our novel system \nfilters learner profile attributes to discover a tag that links them \nwith learning resources. \n \n \nKeywords - Apriori principle, Clustering, NMF, Learning \nPathway,  Pedagogical accuracy,  Technology enhanced learning. \n \nI.  INTRODUCTION \n \nEducation has been acknowledged as one of the major \npillars to support and improve lives of the economically \ndisadvantaged [26]. Technology enhanced learni",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 5,
+    "modality": "text"
+  },
+  {
+    "text": "the economically \ndisadvantaged [26]. Technology enhanced learning(TEL) aims \nto enhance learning practices of individuals and organizations \nby the design, development and testing of interactive socio \ntechnical innovations [2]. It provides an opportunity to unleash \nthe full potential of machine learning algorithms and apply \nthem to quantify and incorporate psychological factors that \naffect learning. As the web is becoming more ubiquitous, an \nincreased number of learners are gradually turning towards \n",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 6,
+    "modality": "text"
+  },
+  {
+    "text": "an \nincreased number of learners are gradually turning towards \nonline education to seek additional support and guidance. \nTherefore, improving learner experience is also another major \nfocus of TEL. Over the years, various learning repositories \nlike Khan Academy, Merlot(with more than 20,000 learning \nresources \nand \nabout \n70,000 \nregistered \nusers), \nOER \nCommons(with about 18,000 resources), European Schoolnet's \nLearning Resource Exchange(with more than 43,000 learning \nresources from 25 different con",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 7,
+    "modality": "text"
+  },
+  {
+    "text": "(with more than 43,000 learning \nresources from 25 different content providers in Europe and \nbeyond), online education platforms like Coursera, Udacity, \nEdX, Khan Academy, Venture Lab and e-learning platforms \nNPTEL  have been established. They provide personalized \nlearning environments and offer pedagogical support for \nlearners in informal educational settings.  \nApart from providing custom self paced learning tools, \nsuch organizations also measure student progress and provide \ntargeted interventions.",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 8,
+    "modality": "text"
+  },
+  {
+    "text": "so measure student progress and provide \ntargeted interventions. In contrast to formal education systems \nin schools and universities where predefined course structures, \nwell formed accreditation procedures and a regular quality \ncheck of knowledge inflow and outflow is maintained by \ndomain experts, informal learning is basically a kind of \nlifelong learning activity. Here, students are responsible for \ntheir own learning pace and path [1]. The process of learning \nis often self directed and heavily depen",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 9,
+    "modality": "text"
+  },
+  {
+    "text": "he process of learning \nis often self directed and heavily dependent on users \npreferences. Because of no directed course plan and massive \nenrollment to form such informal learning networks, these \nlearners are often overwhelmed with  a plethora of alternative \nlearning resources to choose from. It is highly impossible for a  \nfaculty to cater to the individual problems of learners. As \npointed out in [25], the problem of improving the quality of \neducation is quite multifaceted and intricate. However, the",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 10,
+    "modality": "text"
+  },
+  {
+    "text": " of \neducation is quite multifaceted and intricate. However, the \nsuggestion of correct pathways to be followed while studying \nimportant concepts, can benefit these learners greatly. Though \nthe field of  TEL Recommender system(TEL RecSys) [2] \naddresses this scenario of mass customization, the major factor \nfor deciding the most appropriate learning activities is still \nlearner's rating, review of resources and his fundamental \ndemographic information. This may work well for e-commerce \nrecommender system",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 11,
+    "modality": "text"
+  },
+  {
+    "text": "formation. This may work well for e-commerce \nrecommender systems, but  similar applications in the domain \nof learning may not be suitable.  \nBasically there are the two major differences between \nproduct recommendations and TEL RecSys that need to be \nconsidered. Firstly, learning is an activity that takes more time, \nconsidering the different study goals of individuals and their \ngrasping capabilities. Also, the end objective may be variable.",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 12,
+    "modality": "text"
+  },
+  {
+    "text": ".",
+    "source": "sample",
+    "page": 1,
+    "chunk_idx": 13,
+    "modality": "text"
+  },
+  {
+    "text": "Learners may wish to have different accomplishments after \ncompletion of a learning resource. Secondly, the most \npreferred(rated) learning path may not be pedagogically the \nmost adequate [3].  Thus, the educational specific needs and \ninformation seeking tasks of  stakeholders, make the design of \nlearning resource recommendation quite complex [16].  \nOur statement of contribution in this paper is to develop a \nsystem that can effectively categorize resources based on \ninherent factors that affect student",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 0,
+    "modality": "text"
+  },
+  {
+    "text": "egorize resources based on \ninherent factors that affect student's learning. We aim to \nextract such learning domain specific attributes of learners, \nthat have been discovered from past theoretical research. Such \ncritical factors belong to an entirely different context and play \na much more significant role, as compared to basic profile \ninformation like name, age, sex and other demographic factors. \nWe believe that our system has the potential of improving \nalignment of learner's preferences with the  le",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 1,
+    "modality": "text"
+  },
+  {
+    "text": "al of improving \nalignment of learner's preferences with the  learning resources \nthey are using. Also, it could increase learning efficiency, \nthrough a more structured guidance that is well customized \nand adapted to the learner's objectives. \nThis paper is structured as follows: In section II.I, the \ntechnical terms used are defined. Then, in the following \nsections II.II and II.III, the user profile attributes are described \nand challenges are presented. The hypothesis, problem \nstatement and the propos",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 2,
+    "modality": "text"
+  },
+  {
+    "text": "are presented. The hypothesis, problem \nstatement and the proposed method is described in detail in \nsection III. Section IV talks about the experimental results and \ndiscussions. Prior work is discussed in section V. The \nconclusion and future work follow at the end in section VI and \nVII. \n \nII.I.  PRELIMINARIES \n1)Learning Management system(LMS)- It is a system that \nassists learners in finding learning resources and guides them \nto make the best choices in managing these resources. It also \nsupports the",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 3,
+    "modality": "text"
+  },
+  {
+    "text": " best choices in managing these resources. It also \nsupports these learners in achieving their goals in a specific \ndomain. A good literature review of LMS can be found in [4]. \n2)Learning pathway- A set of learning objects like books, \nmultimedia(audio recordings, videos), images, slides etc which \nare packaged and organized in a sequence form a learning \npathway. A formal definition of the same can be found in [5]. \n3)Transfer Learning- The process of applying concepts and \nskills learned in one domain to",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 4,
+    "modality": "text"
+  },
+  {
+    "text": "rocess of applying concepts and \nskills learned in one domain to another related or disjoint \ndomain in different scenarios is called transfer learning [6]. \nThe absence of a guide to assist learners in providing a good \ncross domain application context, makes an understanding of \nthe research issues associated with transfer learning quite \ndifficult. \n4)Pedagogical adequacy(accuracy)- It is the kind of \neducation that focuses equally on five different aspects of \nlearning- student centred tutelage with an ",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 5,
+    "modality": "text"
+  },
+  {
+    "text": "ifferent aspects of \nlearning- student centred tutelage with an understanding of his \neducational background, strategic course instruction design to \nmaximize learning, evaluation of student's advancement \ntowards the course learning objectives for knowledge \nretention, use of different teaching strategies, awareness \nregarding teaching challenges and knowing ways to handle \nthem[7].  \n5)K-means clustering- Intuitively, what clustering techniques \naim to achieve is  finding data points which are more simila",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 6,
+    "modality": "text"
+  },
+  {
+    "text": "es \naim to achieve is  finding data points which are more similar to \none another than the rest of the points in n-dimensional feature \nspace. K-means is a widely adopted clustering method that \nstarts out by creating 'k' different clusters and assigning each \ndata point to one of the clusters based on some standard \ndistance measure like Euclidean, Pearson correlation etc. At \nevery iteration, centroid of the clusters are updated with the \nmean value of the data points assigned to that cluster. The idea \ni",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 7,
+    "modality": "text"
+  },
+  {
+    "text": "n value of the data points assigned to that cluster. The idea \nis to minimize intra cluster distance and maximize inter cluster \ndistance. Proposed in [22], K means clustering has been a \nwidely studied unsupervised machine learning algorithm. \n6)Apriori principle- Originally presented in [23], it optimizes \nassociation analysis in large scale machine learning. Either for \nfinding out frequent itemsets or discovering association rules \nin large datasets, apriori principle is applied to reduce the \nnumber of",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 8,
+    "modality": "text"
+  },
+  {
+    "text": " datasets, apriori principle is applied to reduce the \nnumber of possible interesting itemsets. Measures like support \nand confidence levels are established to evaluate the \nassociations discovered.  Apriori principle says that if an \nitemset is infrequent, all it's supersets will also be infrequent. \nAt every iteration of the algorithm, candidate itemsets are \npruned if their support levels are below the minimum support. \nThe process of joining lower order itemsets based on this \ncriteria is repeated, unti",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 9,
+    "modality": "text"
+  },
+  {
+    "text": "g lower order itemsets based on this \ncriteria is repeated, until no more itemsets can be created \nfurther. \n7)Non negative matrix factorization(NMF)-  Formally \ndefined in [24] for learning parts of objects and combining \nthem to get an aggregate representation, NMF derives it's roots \nfrom linear algebra. The basic idea of NMF is that it \ndecomposes matrix A into two matrices B(features) and \nC(weights) and also enforces a non negative constraint on the \nentries of these matrices. In machine learning, it ",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 10,
+    "modality": "text"
+  },
+  {
+    "text": "aint on the \nentries of these matrices. In machine learning, it is used as a \nfeature extraction algorithm, where the decomposed matrices \nrepresent the extracted features in the observations and their \nimportance or  relevance to the observed data. \n \nII.II.  USER PROFILE ATTRIBUTES \nUser model is a distinctive feature of adaptive systems, as this \ninformation allows the system to behave differently for \ndifferent users [20]. In our work, we consider the following \nuser profile attributes for incorporating",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 11,
+    "modality": "text"
+  },
+  {
+    "text": "onsider the following \nuser profile attributes for incorporating into the proposed \nmachine learning framework to tag learning resources. The \nobjective is to improve  the pedagogical accuracy and \nadequacy of TEL RecSys, by  suggesting resources that reflect \nthe learner's objective and form a close match to his learning \nrequirements. By doing so, the learner can be kept motivated \nto complete his learning activities in an effective and efficient \nmanner. \n \n1)Skill level- This includes current competency",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 12,
+    "modality": "text"
+  },
+  {
+    "text": "ient \nmanner. \n \n1)Skill level- This includes current competency level of the \nlearner and the target skill level that is to be achieved. Based \non Bloom's taxonomy and CDIO report[8], the following \nproficiency levels are identified:",
+    "source": "sample",
+    "page": 2,
+    "chunk_idx": 13,
+    "modality": "text"
+  },
+  {
+    "text": "\uf0b7 \nLevel 1- To have experienced or been exposed \nto(Knowledge)- refers to the process of recalling \nprimer knowledge on a subject \n\uf0b7 \nLevel 2- To be able to participate in and contribute \nto(Comprehension)- refers to the ability to describe \nand define what is learnt \n\uf0b7 \nLevel 3- To be skilled in the practice or \nimplementation of(Application)- refers to the process \nof execution of concepts \n\uf0b7 \nLevel \n4- \nTo \nbe \nable \nto \nunderstand \nand \nexplain(Analysis)- refers to the process of analysis, \ninterpretati",
+    "source": "sample",
+    "page": 3,
+    "chunk_idx": 0,
+    "modality": "text"
+  },
+  {
+    "text": "lain(Analysis)- refers to the process of analysis, \ninterpretation and discussion on results \n\uf0b7 \nLevel 5- To be able to lead or innovate in(Synthesis)-  \nrefers to the process of creation of thoughts and \ndevelopment of  new ideas \n\uf0b7 \nLevel 6-  To be able to assess and evaluate(Evaluate)- \nrefers to the process of estimation and evaluation of \nthe concepts learnt \n2)Preferred Learning strategy- This basically refers to the \nintended way of understanding information, solving problems, \nchecking and evaluatin",
+    "source": "sample",
+    "page": 3,
+    "chunk_idx": 1,
+    "modality": "text"
+  },
+  {
+    "text": "rstanding information, solving problems, \nchecking and evaluating the knowledge gained. Based on the \nstrategic instruction model proposed by [9], we have included \nthe following five learning strategies for the purpose of our \nstudy: \n\uf0b7 \nAssignment Completion Strategy- designed to enable \nstudents to complete and hand in the assignments on \ntime \n\uf0b7 \nTest-Taking Strategy- designed to be used while \ntaking classroom(physical/virtual) tests, with students \nallocating time and certain priority to each section ",
+    "source": "sample",
+    "page": 3,
+    "chunk_idx": 2,
+    "modality": "text"
+  },
+  {
+    "text": " students \nallocating time and certain priority to each section of \nthe test \n\uf0b7 \nMnemonic Strategy- designed to help students \nremember \ncomplex \nconcepts \nusing \nsimple \nrepresentations(diagrams) and mnemonic codes. \n\uf0b7 \nSelf-Questioning Strategy- designed to help students \ncreate their own motivation while reading by creating \nquestions in mind, predicting answers, searching,  \nverifying and paraphrasing them \n\uf0b7 \nError Monitoring Strategy- designed to help students \nindependently detect and correct errors ",
+    "source": "sample",
+    "page": 3,
+    "chunk_idx": 3,
+    "modality": "text"
+  },
+  {
+    "text": "igned to help students \nindependently detect and correct errors \n\uf0b7 \nTeamwork Strategy- designed to provide a framework \nfor organizing and completing specific tasks in small \ngroups \n3) Available Learning time - This includes the number of \ntime units(hours per day and number of weeks), and indicates \nthe time allotted for the purpose of study in an informal \neducational setting.  \n4)Preferred Presentation style- Because of the difference in \ncognitive processing , we consider visual, textual and auditory \n",
+    "source": "sample",
+    "page": 3,
+    "chunk_idx": 4,
+    "modality": "text"
+  },
+  {
+    "text": "ognitive processing , we consider visual, textual and auditory \npresentation styles. More specifically, we include: \n\uf0b7 \nPortable document format(pdf) documents \n\uf0b7 \nPower points \n\uf0b7 \nWeb pages(html) \n\uf0b7 \nVideos \n\uf0b7 \nAudio books and resources \nAn alternative to the above styles include presentation of \nexamples, presentation of theoretical knowledge and practical \nexamples [10]. Over and above all these explicit factors that \ncan be gathered by an initial questionnaire, other implicit \nfactors like effort of the",
+    "source": "sample",
+    "page": 3,
+    "chunk_idx": 5,
+    "modality": "text"
+  },
+  {
+    "text": "nitial questionnaire, other implicit \nfactors like effort of the learner and his willingness to obey \nand follow the recommendations  can be measured during \ncourse progress [11][12].  \n \nII.III. CHALLENGES AND MOTIVATION \nThough technology alone cannot solve complex problems like \nproviding universal and high quality education, but it can \nsurely improve the quality of solutions and their impact on \nlearning. This is the driving factor behind our work.  \n \n1)We notice that a major issue in TEL RecSys is th",
+    "source": "sample",
+    "page": 3,
+    "chunk_idx": 6,
+    "modality": "text"
+  },
+  {
+    "text": "our work.  \n \n1)We notice that a major issue in TEL RecSys is the use of \nonly learner ratings, reviews and basic profile information for \nproviding tailored learning pathways.  Other critical factors \nrelated to student's academic profile and interests are left out. \nThis leads to inaccurate and unsatisfactory recommendations \nmost of the times. However, because learning takes place in \nextremely diverse and rich environments, we include the other \ndimensions as stated in Section II.I to make the learning ",
+    "source": "sample",
+    "page": 3,
+    "chunk_idx": 7,
+    "modality": "text"
+  },
+  {
+    "text": "ther \ndimensions as stated in Section II.I to make the learning model \nmore helpful and close to real life behaviour. Because these \nuser specific attributes do not have a direct link with the \nlearning resources and due to the unavailability of  tagged data \nfor these resources, there is a need to incorporate such \nparameters into the recommendation framework. And our \nproposed solution finds a way to fill this missing link by using \nmachine learning algorithms to accomplish the task at hand.  \n \n2)The oth",
+    "source": "sample",
+    "page": 3,
+    "chunk_idx": 8,
+    "modality": "text"
+  },
+  {
+    "text": "earning algorithms to accomplish the task at hand.  \n \n2)The other challenge while applying machine learning to \nmake appropriate sense of the user profile attributes is that, \nthough skill levels and learning time can be inferred \nnumerically,  learning strategy and presentation style are very \nnominal in nature. Deriving similarities between them is quite \ndifficult numerically. We cannot represent such nominal \nvariables on a continuous scale and perform arithmetic \noperations on them. For example, it's ",
+    "source": "sample",
+    "page": 3,
+    "chunk_idx": 9,
+    "modality": "text"
+  },
+  {
+    "text": "e and perform arithmetic \noperations on them. For example, it's difficult to comprehend, \nhow similar or dissimilar test taking and mnemonic learning \nstrategies are, without any training data. This fact has useful \nimplications, because distance measures like Euclidean,",
+    "source": "sample",
+    "page": 3,
+    "chunk_idx": 10,
+    "modality": "text"
+  },
+  {
+    "text": "Pearson correlation etc. can't  be applied to address such a \nsituation. Thus, there is a need to characterize the data further \nto leverage these nominal attributes.  \n \nIII. METHODOLOGY \nOur methodology for tagging learning resources consists of \nderiving a subset of learners who have rated the learning \nresource above a particular threshold, finding a relation \nbetween their nominal attribute parameters, grouping these \nlearners to find the cluster of largest size, and using the most \nfrequently occurrin",
+    "source": "sample",
+    "page": 4,
+    "chunk_idx": 0,
+    "modality": "text"
+  },
+  {
+    "text": "cluster of largest size, and using the most \nfrequently occurring learning profile attributes as a more \ninformative tag for the learning resource. \nIII.I. HYPOTHESIS  \nIn order to arrive at the formal algorithm design and answer \nthe compound key question of our research, i.e., how to \nestablish the link between learning resources and user profile \nattributes that play a major role in learning(as discussed \nabove), we formulate our research hypothesis as follows :  \nH1: Learning resources, apart from being",
+    "source": "sample",
+    "page": 4,
+    "chunk_idx": 1,
+    "modality": "text"
+  },
+  {
+    "text": "pothesis as follows :  \nH1: Learning resources, apart from being distinguishable \nsolely by learner ratings, can be more efficiently categorized \nand \ntagged \naccording \nto \nlearner \nstudy \nmotives. \nH2: Incorporating user centric attributes for suggesting \ncustomized learning pathways leads to pedagogically more \naccurate and satisfactory recommendations for the learner. \nWe address the first hypothesis in this paper and formalize it \nas follows: \nIII.II. SOLUTION & APPROACH FOLLOWED \n \nStep 1- Alg. \"build",
+    "source": "sample",
+    "page": 4,
+    "chunk_idx": 2,
+    "modality": "text"
+  },
+  {
+    "text": "ws: \nIII.II. SOLUTION & APPROACH FOLLOWED \n \nStep 1- Alg. \"build_learner_subset\" \ninput- learner set \noutput- learner subset based on rating threshold criteria \na.\ny\nL\nl \uf0ce\n\uf022\n  build V\uf0cdU |\niyr \uf0b3\n0\n\uf064,  \n0\n\uf064\uf0a310 and  \n0\n\uf064\uf0ceN (i=1 \nto n, y=1 to m)  \n \n \n \n/*build learner subset*/ \nb.\n,\ni\nV\nu \uf0ce\n\uf022\nconsider \nij\np  as a point in 5-D feature space (i= 1 \nto  n, j= 1 to 5)  \n \nFig (i) Alg. \"build_learner_subset\" \nIn Fig (i), for all learning resources, we get a list of learners \nwho have rated them greater than a thres",
+    "source": "sample",
+    "page": 4,
+    "chunk_idx": 3,
+    "modality": "text"
+  },
+  {
+    "text": "get a list of learners \nwho have rated them greater than a threshold value (e.g.- \ngreater than 9/10). This list is an indicative of learners who \nhave preferred those resources over and above others. For \nexperimentation, we tune this threshold value, so that we get a \nlearner subset that is big enough to be tested for future steps.  \nStep 2- Alg. \"nominal_attributes_quantify\" \ninput- number of learners using nominal attribute parameter \npair (p,q) in common \noutput- numerical values for nominal attribute ",
+    "source": "sample",
+    "page": 4,
+    "chunk_idx": 4,
+    "modality": "text"
+  },
+  {
+    "text": "(p,q) in common \noutput- numerical values for nominal attribute parameters  \n\uf022 nominal attributes(a3, a4) \n      a. Construct matrix A5*5 with  each row and \n \ncolumn  representing specific nominal  attribute \n \nparameters, and  Aij  = no. of  users who  have \n \nparameter i and j in common. \n      b. Apply NMF to split A into B & C: \n      A5*5=B5*k\uf0b4Ck*5 \n     where  Ck*5 \uf0aefeatures matrix (rows= features, \n \ncolumns= nominal attribute parameters), and \n \nCij= weight  of each nominal attribute parameter \n \nt",
+    "source": "sample",
+    "page": 4,
+    "chunk_idx": 5,
+    "modality": "text"
+  },
+  {
+    "text": "s), and \n \nCij= weight  of each nominal attribute parameter \n \nto  the feature extracted, \n     and B5*k \uf0aeweight matrix (rows= nominal \n \nattribute parameters, columns=features), and  \n \nBij= weight  of each feature in nominal attribute \n \nparameter \n       c. Now,  \n    (i) \uf022 rows in B, \nA. Consider maximum(value). \nB. Choose feature row in C, corresponding \nto max (value). \nC. Obtain an ordering  that defines how \nsimilar (important) each nominal attribute  \nparameter is to the other. \nD. Construct matrix",
+    "source": "sample",
+    "page": 4,
+    "chunk_idx": 6,
+    "modality": "text"
+  },
+  {
+    "text": "inal attribute  \nparameter is to the other. \nD. Construct matrix D where each row \nidentifies one linear ordering . \n(ii)Make matrix D symmetric by replacing Dij   \n \nwith minimum(Dij, Dji). \n                  (iii)\uf022 rows in D, take average score \n                            (Each average value represents possible  \n \n \n \n \nnumerical values that the nominal attribute \n \n \n \n \ncan take).  \nFig (ii) Alg. \"nominal_attributes_quantify\" \nLet   \u2018S\u2019 be a System \nL={ 1, 2\n3, .....,\n,\nm\nl l l\nl }  be a set of learni",
+    "source": "sample",
+    "page": 4,
+    "chunk_idx": 7,
+    "modality": "text"
+  },
+  {
+    "text": "e a System \nL={ 1, 2\n3, .....,\n,\nm\nl l l\nl }  be a set of learning resources. \nU={\n1,\n2,\n3, ....,\nn\nu u\nu\nu\n} be a set of learners. \nA={\n1,\n2,\n3,\n4,\n5\na a a a a } be a set of learner profile attributes. \nR={1,2,3,4,5,...,10} be set of possible ratings. \nwhere \nm, n \uf0ce N \n1a \uf0aecurrent skill level \uf0ce {1,2,3,4,5,6} \n2\na \uf0aetarget skill level\uf0ce {1,2,3,4,5,6},  \uf022ui\uf0ceU , a2>a1  \n            (i=1 to n) \n3a  \uf0aelearning strategy\uf0ce {1,2,3,4,5}     \n         /*nominal attribute*/ \n4a  \uf0aepreferred presentation style\uf0ce {1,2,3,4,5}",
+    "source": "sample",
+    "page": 4,
+    "chunk_idx": 8,
+    "modality": "text"
+  },
+  {
+    "text": "inal attribute*/ \n4a  \uf0aepreferred presentation style\uf0ce {1,2,3,4,5} \n \n \n/*nominal attribute*/ \n5a  \uf0aelearning time\uf0ceN     /*discretized as different \nranges*/ \nijp \uf0aeuser  ui 's  profile attribute aj  (i=1 to n, j=1 to 5) \niyr \uf0ae user  ui 's  rating of learning resource ly , (i=1 to \nn, y=1 to m) \nProblem Statement: \n\uf022ly\uf0ceL, tag ly with each aj\uf0ceA , (y=1 to m , j=1 to 5)",
+    "source": "sample",
+    "page": 4,
+    "chunk_idx": 9,
+    "modality": "text"
+  },
+  {
+    "text": "Secondly, we apply NMF as shown in Fig (ii). NMF will \nextract features from nominal attribute parameters and output \nhow much importance does each feature have with respect to \nthe other parameters in terms of weights. And, because \nnominal attribute parameters cannot be both similar to each \nother by different numerical metrics, we make matrix D \nsymmetric. The average of each linear ordering in matrix D \nindicates an average similarity with other nominal attribute \nparameters. Thus, the output of this st",
+    "source": "sample",
+    "page": 5,
+    "chunk_idx": 0,
+    "modality": "text"
+  },
+  {
+    "text": "other nominal attribute \nparameters. Thus, the output of this step is a numerical value \nfor each nominal attribute parameter, which can be used in the \nnext step. \nStep 3.1- Alg. \"group_learner\" \ninput- data points for every learner, with each coordinate \nrepresenting different profile attributes \noutput- cluster with largest number of learners \nS\uf0ae{\uf066} \n \n \n \n \n \n \nPick first point   pij at random  \nS\uf0aeS\uf0c8{ pij } \nn=1 \nchoose a value k\uf0ceN  \n \n \n/*k=number of clusters*/ \nwhile n\uf0a3k  \n \n \n \n \n/*clusters chosen al",
+    "source": "sample",
+    "page": 5,
+    "chunk_idx": 1,
+    "modality": "text"
+  },
+  {
+    "text": "k=number of clusters*/ \nwhile n\uf0a3k  \n \n \n \n \n/*clusters chosen already*/  \n{ \nAdd point  \n'\nq to S, such that  \n'\nq \uf0ce\nij\np  and min{distance(\n'\nq ,S)} > distance(\niq ,S)     \n(\niq \uf0ce\nijp - '\nq , i=1 to n, j=1 to 5) \nS\uf0aeS \uf0c8{\n'\nq }  \n \n \n      \nn=n+1 \n} \nStep 3.2 \nWhile any point has changed in cluster made:  \n     \n/*K nearest neighbour based clustering*/ \n{ \n   \uf022\nij\np  (i=1 to n,j=1 to 5) \n             \uf022Sa\uf0ce S  (a=1 to k) \n                        d(Sa, \nij\np  )= \uf028\n\uf029\n\uf028\n\uf029\n2\n2\n1\n1\n5\n5\n,.......,\na\ni\na\ni\nS\nP\nS\nP\n\uf02d\n\uf02b",
+    "source": "sample",
+    "page": 5,
+    "chunk_idx": 2,
+    "modality": "text"
+  },
+  {
+    "text": "(Sa, \nij\np  )= \uf028\n\uf029\n\uf028\n\uf029\n2\n2\n1\n1\n5\n5\n,.......,\na\ni\na\ni\nS\nP\nS\nP\n\uf02d\n\uf02b\n\uf02b\n\uf02d\n        \n \n \n \n   /*Euclidean distance metric*/ \n              x[a]=min{d(Sa, \nijp )} \n             get l=a which corresponds to min(x[]) \n              Sl=Sl\uf0c8\nijp  \n    \uf022every Sl  ,calculate mean of points (M) in that cluster \n            Sl\uf0ac Mean(M) \n} \nStep 3.3 \nReduce \u2018k\u2019 till average diameter  D increases by a very large \nfactor       /*choose optimal no. of clusters*/ \nD= max(d(p, q)) \uf022(p, q) \uf0ce\nijp   \nStep 3.4 \nChoose cluster with la",
+    "source": "sample",
+    "page": 5,
+    "chunk_idx": 3,
+    "modality": "text"
+  },
+  {
+    "text": "= max(d(p, q)) \uf022(p, q) \uf0ce\nijp   \nStep 3.4 \nChoose cluster with largest number of attribute itemsets \nC\uf0acmax{Size(Sa )}  \nFig (iii) Alg. \"group_learner\" \nNow, as shown in Fig (iii), in the subset of learners identified, \nwe apply clustering to group learners based on user profile \nattributes(discussed in Sec II.I). Each learner is a five \ndimensional point and the coordinates represent his attributes. \nWe then pick the cluster having largest size. This cluster \nfurther refines the users according to certain se",
+    "source": "sample",
+    "page": 5,
+    "chunk_idx": 4,
+    "modality": "text"
+  },
+  {
+    "text": " This cluster \nfurther refines the users according to certain set of user profile \nattributes. Intuitively, it is a representative of certain pattern in \nlearning behaviour.  \nStep 4- Alg. \"frequent_attributes_filter\" \ninput- data points of the largest cluster chosen \noutput- most frequently occurring user profile attributes   \nChoose support level   sl\uf0ce {0,..,1}and sl \uf0ceR  \n \n \n/*association analysis*/  \nL1\uf0ac{1 itemsets} \nfor(k=2,Lk-1 \uf0b9\uf066,k++) \n{ \n    ck\uf0ac{c|c=a\uf0c8{b} \uf04ca\uf0ce Lk-1 \uf04cb\uf0ce\nk\nLk-1 \uf04c b\uf0cfa} \n    \uf022ti\uf0ceC  \n/*fo",
+    "source": "sample",
+    "page": 5,
+    "chunk_idx": 5,
+    "modality": "text"
+  },
+  {
+    "text": " \n    ck\uf0ac{c|c=a\uf0c8{b} \uf04ca\uf0ce Lk-1 \uf04cb\uf0ce\nk\nLk-1 \uf04c b\uf0cfa} \n    \uf022ti\uf0ceC  \n/*for each learner record ti in the cluster*/ \n       { \n              ct\uf0ac{c|c \uf0ce ck \uf04cc\uf0cdti} \n              \uf022c\uf0cect,  c.count++;  /*maintain count of frequency*/ \n       } \nLk \uf0ac{c\uf0ceck|c.count>sl}  \n      /*include learner itemsets with \ncount greater than min. support level*/ \n} \nreturn  L=\nk\nLk  \n \n/*returns most frequently occurring learner  profile attributes*/ \nFig (iv) Alg. \"frequent_attributes_filter\" \nNext, the focus is to quantify this pattern a",
+    "source": "sample",
+    "page": 5,
+    "chunk_idx": 6,
+    "modality": "text"
+  },
+  {
+    "text": "ttributes_filter\" \nNext, the focus is to quantify this pattern and address the \nquestion of tagging learning resources based on the largest \ncluster chosen. The solution to this problem is application of \nassociation analysis to extract hidden knowledge and \ninteresting relationships from this processed data(Fig(iv)). We \nuse frequent itemsets to find the most commonly attributes that \noccur together using the apriori principle. A minimum support \nlevel is defined as an input to this fourth step. The output",
+    "source": "sample",
+    "page": 5,
+    "chunk_idx": 7,
+    "modality": "text"
+  },
+  {
+    "text": "rt \nlevel is defined as an input to this fourth step. The output is a \ncollection of profile attributes, among which we pick the one \nwith largest frequency. Finally, we assign this most frequently \noccurring and largest itemset of attributes to the learning \nresource.  \n \nV. EXPERIMENTAL RESULTS AND DISCUSSION \nThe main contribution of our work is the application of \nmachine learning techniques to develop a novel system that \ncan aid in more accurate learning resource pathways \nrecommendation. The strength",
+    "source": "sample",
+    "page": 5,
+    "chunk_idx": 8,
+    "modality": "text"
+  },
+  {
+    "text": "ccurate learning resource pathways \nrecommendation. The strength of the system lies in assisting \nnew learners by providing more relevant and structured \nnavigational support for informal education settings. Instead of  \n\"People similar to you who liked learning resource X also",
+    "source": "sample",
+    "page": 5,
+    "chunk_idx": 9,
+    "modality": "text"
+  },
+  {
+    "text": "liked Y\", recommendations take the form of  \"People similar \nto you with learning strategy 3, current skill level 2, target skill \nlevel 5, preferred presentation style 4, available learning time \n[20-30] time units who liked the learning resource X also liked \nY\". The advantages are: \n1)Weight of recommendation and it's specificity is increased. \n2)A sense of faith in the recommender system is introduced \nbecause peer learners having similar competencies are \nmatched. \n3)The learner is placed in a more com",
+    "source": "sample",
+    "page": 6,
+    "chunk_idx": 0,
+    "modality": "text"
+  },
+  {
+    "text": "ompetencies are \nmatched. \n3)The learner is placed in a more comfortable and confident \nposition to choose his learning resources.  \n4)Also, learning resources  get organized according to learner \ncharacteristics.  \n \nFor the implementation, we used the \"Book Crossing\" \ndataset [14], consisting of 2,78,858 learners providing \n1,149,780 ratings about 2,71,379 learning resources(books). \nBecause TEL datasets having additional and explicit \ninformation about learning attributes are very rare to find, the \nimpl",
+    "source": "sample",
+    "page": 6,
+    "chunk_idx": 1,
+    "modality": "text"
+  },
+  {
+    "text": "ation about learning attributes are very rare to find, the \nimplementation phase consisted of generating random values \nfor various user profile attributes, as mentioned in Section \nII.II, and augmenting them with the \"Book Crossing\" dataset. \nThen, on applying NMF and extracting 10 independent \nfeatures, we achieved the following results for the two nominal \nattributes: \n \n \n \n \n \nFig (v)Learning strategy  \n \n \n \n \n \n \nFig (vi)Presentation style  \n \nFrom Fig (v) and Fig (vi), we infer that learning strateg",
+    "source": "sample",
+    "page": 6,
+    "chunk_idx": 2,
+    "modality": "text"
+  },
+  {
+    "text": "le  \n \nFrom Fig (v) and Fig (vi), we infer that learning strategy 3 and \n5 are most similar or important with respect to each other, \nwhile  learning strategy 4 and 5 are least similar. Also, among \nthe preferred presentation styles, 4 and 5 are most similar(least \ndistance between them), while 1 and 3 are the least \nsimilar(maximum distance).  \nSome may wonder that it's difficult to evaluate such a \nsystem. But, the identified way of evaluating this randomized \nsimulation is by implicit inference of whethe",
+    "source": "sample",
+    "page": 6,
+    "chunk_idx": 3,
+    "modality": "text"
+  },
+  {
+    "text": "g this randomized \nsimulation is by implicit inference of whether the target learner \nwas recommended learning resources based on full user profile \ncloud of similar learners and in the same domain. The only \nshortcoming is that we cannot explicitly infer user satisfaction \nand correctness of the proposed learning pathway through a \nquestionnaire. However, the importance and relevance of \nimplicit inference lies in the fact that it can be collected more \neasily and at lower cost to the user, although infere",
+    "source": "sample",
+    "page": 6,
+    "chunk_idx": 4,
+    "modality": "text"
+  },
+  {
+    "text": "cted more \neasily and at lower cost to the user, although inferences about \nlearning resource desirability will be slightly less accurate than \nexplicitly supplied feedback [15].   \nNext, we grouped the subset of users, who rated learning \nresources greater than 6(on a scale of 10). Using intelligent \nmulti attribute visualization techniques, we plotted the \nclustering \nresults \nfor \nlearning \nresource \nwith \nISBN \n\"000649840X\" and ISBN \"0684867621\" in the dataset, and \ncame up with interesting observations",
+    "source": "sample",
+    "page": 6,
+    "chunk_idx": 5,
+    "modality": "text"
+  },
+  {
+    "text": "7621\" in the dataset, and \ncame up with interesting observations. In Fig (vii), each \nattribute is represented in a vertical line, where the maximum \nand minimum values of that dimension are scaled to the upper \nand lower points on these vertical lines. For 5 visualized \nattributes, 4 lines connected to each vertical line at the \nappropriate dimensional value represent a 5-dimensional point. \nThe plot shows few prominent horizontal lines(data points), \nwhich intuitively represent strong candidates for taggi",
+    "source": "sample",
+    "page": 6,
+    "chunk_idx": 6,
+    "modality": "text"
+  },
+  {
+    "text": "oints), \nwhich intuitively represent strong candidates for tagging \nlearning resources. Coming to Fig (viii), it provides further \nenhancements to the visualization by depicting data points that \nare attracted to anchors with value  dependent positions. The \ndata instances are placed inside a 5-sided polygon because the \nclustering process is based on 5 different learner profile \nattributes. \n \n \nFig (vii)Parallel Coordinates Visualization \n( for ISBN \"000649840X\")",
+    "source": "sample",
+    "page": 6,
+    "chunk_idx": 7,
+    "modality": "text"
+  },
+  {
+    "text": "or ISBN \"000649840X\")",
+    "source": "sample",
+    "page": 6,
+    "chunk_idx": 8,
+    "modality": "text"
+  },
+  {
+    "text": "Fig (viii)Polyviz Visualization(for ISBN \"0684867621\") \n \nNext, on applying association analysis to the data points of \nthe largest cluster, we get the certain tags based on most \nfrequently occurring attribute itemsets. Keeping the support \nlevel constant at 0.1, we generate tags for each of the learning \nresources, four of which are shown in Fig (ix). If there are \nmany tags having same frequencies, we generate tag clouds for \nthe corresponding learning resources, where each cloud can \nhold more than one ",
+    "source": "sample",
+    "page": 7,
+    "chunk_idx": 0,
+    "modality": "text"
+  },
+  {
+    "text": "ng learning resources, where each cloud can \nhold more than one kind of preference(tag).  \nThough some of the current tags do not include all 5 user \nprofile attributes, we claim that the system will generate better \nand higher order tags, once more number of learners start \nusing the system. This is because the input learner subset will \ngrow in size at each step of the system and this will increase \nthe number of possible combinations of learner profile \nattributes. The justification seems valid, because ",
+    "source": "sample",
+    "page": 7,
+    "chunk_idx": 1,
+    "modality": "text"
+  },
+  {
+    "text": "ner profile \nattributes. The justification seems valid, because our proposed \nsystem is a bottom up system which incrementally improves as \nlearners and their ratings increase. It is feasible for lifelong \nlearning scenarios with changing learning actions.  \n \nLearning Resource \nISBN \nTag-Cloud generated \n000649840X \n[6, 6, [41-50], 24240, 20549] \n002542730X \n[4, 5, -, 30380,23783] \n and  \n[-, 6, [51-60], 24240, 22802] \n038550120X \n[6, 6, [51-60], 24240, 23783] \nand \n[6, 6, [21-30], 17608,  23783] \n00609283",
+    "source": "sample",
+    "page": 7,
+    "chunk_idx": 2,
+    "modality": "text"
+  },
+  {
+    "text": "0], 24240, 23783] \nand \n[6, 6, [21-30], 17608,  23783] \n0060928336 \n[-, -, -, 30380,22802] \nand \n[-, 6, [41-50], -, -] \n \nFig(ix)Tags generated for learning resources(5 fields in tag \ncloud are Current Skill level, Target skill level, Learning \ntime(range in hrs), Learning strategy & Presentation style) \n \n \nV. RELATED WORK \nIn this section, we describe the prior studies that have been \nmade in the context of development of learner models for \neducational adaptive hypermedia.  In [17], Sicilia et al. carrie",
+    "source": "sample",
+    "page": 7,
+    "chunk_idx": 3,
+    "modality": "text"
+  },
+  {
+    "text": "educational adaptive hypermedia.  In [17], Sicilia et al. carried \nout an empirical study on the Merlot repository dataset and \nconcluded that ratings cannot correctly differentiate learner \npreferences. Results showed relatively high mean absolute \nerrors of around 1.0 in a scale of 1 to 5.  Psychological studies \nhave stressed on the need to include personalization factors \nlike collective intelligence, competencies of peer learners and  \nlearner's reaction towards the learning objects recommended, \nfor i",
+    "source": "sample",
+    "page": 7,
+    "chunk_idx": 4,
+    "modality": "text"
+  },
+  {
+    "text": "rner's reaction towards the learning objects recommended, \nfor inclusion in the design of TEL RecSys [18]. Instead of \nfocusing on development of better algorithms, such learner \ncentric factors can improve accuracy, as learners are both \nproducers of data and recipients of information. A theoretical \nstudy on learner models like stereotype, overlay, differential, \nperturbation and plan models was made in [21], and a generic \napproach to build these models was provided. However, no \nalgorithms or implementa",
+    "source": "sample",
+    "page": 7,
+    "chunk_idx": 5,
+    "modality": "text"
+  },
+  {
+    "text": "these models was provided. However, no \nalgorithms or implementation details were described.  \nIn [19], Verbert et al. did a survey on context aware \nrecommender systems and classified the context framework of \nTEL RecSys on the basis of computing, location,  time, \nactivity,  physical conditions, resource and users. The study \nshowed that less than half of the TEL RecSys actually took \ncomputing context into consideration. For a majority of them, \nthe implementation was still in the prototype phase. Learne",
+    "source": "sample",
+    "page": 7,
+    "chunk_idx": 6,
+    "modality": "text"
+  },
+  {
+    "text": "em, \nthe implementation was still in the prototype phase. Learner \ncharacteristics \nlike \nbasic \npersonal \ninformation, \nprior \nknowledge level(performance), interests, learning goals, \ncognitive style and affects(emotions) were identified as key \npoints for consideration in providing personalized learning \nservices. In [12], these determinants were implemented in \nNetLogo simulation environment, with an objective of \nidentifying  the preference and competence gap of learners. \nFormulas for implicit and exp",
+    "source": "sample",
+    "page": 7,
+    "chunk_idx": 7,
+    "modality": "text"
+  },
+  {
+    "text": "e and competence gap of learners. \nFormulas for implicit and explicit learning variables laid the \nbasis of determining the percentage of graduates, their \nsatisfaction levels and time taken to graduate. However, to the \nbest of our knowledge, the identified user profile attributes \nhave not been used for improving pedagogical accuracy of \nlearning pathways. And because this a relatively new area, not \nmuch work has been done in applying machine learning \noriented approaches to leverage such user tagged par",
+    "source": "sample",
+    "page": 7,
+    "chunk_idx": 8,
+    "modality": "text"
+  },
+  {
+    "text": "e learning \noriented approaches to leverage such user tagged parameters. \nSo, it is not trivial to use the previous work along this line to \ndirectly \nserve \nas \nsubcomponents \nin \nour \nsetting. \n \nVI. CONCLUSION  \nIn this paper, we have designed a solution to cater to learning \nresource recommendations that inaccurate and less relevant. \nThis disturbs learners and wastes their precious time in \nsearching for the apt learning resources. We call this area of \ntechnology enhanced learning sensitive because to",
+    "source": "sample",
+    "page": 7,
+    "chunk_idx": 9,
+    "modality": "text"
+  },
+  {
+    "text": " this area of \ntechnology enhanced learning sensitive because today, many \npeople \nfrom \ndifferent \ndemographics \nhaving \ndifferent \ncompetencies, different ways of learning and interpretation, \ncollaborate on online education portals and leverage resources",
+    "source": "sample",
+    "page": 7,
+    "chunk_idx": 10,
+    "modality": "text"
+  },
+  {
+    "text": "from learning repositories to improve their skill set. Because \nof the inefficiency of human support that can be provided to \nsuch a large learning network, intelligent ways are required to \nmatch learner's actual preferences with learning resources. And \nleveraging user specific learning attributes is one of the ways \nto model real life learner behaviour and improve the \npedagogical accuracy of  suggested learning pathways. \n \nVII. FUTURE WORK \nFor future work, we aim to address hypothesis H2, as \nexplaine",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 0,
+    "modality": "text"
+  },
+  {
+    "text": " \nFor future work, we aim to address hypothesis H2, as \nexplained in Section III.I. We also plan to evaluate our system \non \"SNAP Amazon product co purchasing network\" metadata \n[13], because it is more informative than the current dataset \nused in experimentation. Furthermore, as the system becomes \nbigger, accuracy could be tested by dynamically increasing \nsupport levels and getting top 'k' patterns of the highest order. \nThe tags achieved at higher support levels would be better than \nthe ones at lower ",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 1,
+    "modality": "text"
+  },
+  {
+    "text": "t higher support levels would be better than \nthe ones at lower support levels. The goal is to choose an \noptimal support level, so that order of attribute itemsets is as \nhigh as possible, and the number of those itemsets having same \nfrequency is as small as possible.  This will reduce ambiguity \nand control the trade off between which and how many \nattribute itemsets to use as a tag for the learning resource. \nAnother possible research direction is to extend this simulation \nbased model to develop real w",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 2,
+    "modality": "text"
+  },
+  {
+    "text": "tion is to extend this simulation \nbased model to develop real world datasets for TEL RecSys. \nSuch an augmented labelling of learning resources will be \nmore reflective of learner proficiencies and objectives. \n \nACKNOWLEDGMENT \n \nThis work was supported by the National Research Foundation \nof Korea(NRF) grant funded by the Korea government(MEST) \n(No. NRF-2013R1A1A2013401). \n \nREFERENCES \n[1] Colley, H., Hodkinson, P., & Malcolm, J. (2002b). Non-formal learning: \nmapping the conceptual terrain. a consulta",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 3,
+    "modality": "text"
+  },
+  {
+    "text": "Non-formal learning: \nmapping the conceptual terrain. a consultation report [Electronic \nVersion]. Retrieved 01.05.2008 from http://www.infed.org/archives/e-\ntexts/colley_informal_learning.htm \n[2] Manouselis, Nikos, Hendrik Drachsler, Riina Vuorikari, Hans Hummel, \nand Rob Koper. \"Recommender systems in technology enhanced \nlearning.\" In Recommender systems handbook, pp. 387-415. Springer \nUS, 2011. \n[3] Mccalla G(2004), The ecological approach to the design of e-Learning \nenvironments:Purpose-based captur",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 4,
+    "modality": "text"
+  },
+  {
+    "text": "h to the design of e-Learning \nenvironments:Purpose-based capture and use of information about \nlearners. Journal of Interactive Media in Education. Retrieved October \n18, 2007, from http://www-jime.open.ac.uk/2004/7 . \n[4] Watson, William R., Sunnie Lee, and Charles M. Reigeluth. \"Learning \nManagement Systems: An Overview and Roadmap of the Systematic \nApplication of Computers in Education.\" Advances in computer-\nsupported learning (2007): 66-96 \n[5] Huang, Y.-M., Huang, T.-C., Wang, K.-T., Hwang, W.-Y. (2",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 5,
+    "modality": "text"
+  },
+  {
+    "text": "96 \n[5] Huang, Y.-M., Huang, T.-C., Wang, K.-T., Hwang, W.-Y. (2009). A \nMarkov-based Recommendation Model for Exploring the Transfer of \nLearning on the Web. Educational Technology & Society, 12(2), 144-\n162.  \n[6] Borich, G. D., & Tombari, M. L. (1995). Educational Psychology: A \nContemporary Approach, New York: Harper Collins College. \n[7] Based on:  Merlot Pedagogy portal( http://pedagogy.merlot.org/) \n[8] The CDIO Syllabus: A comparative study of expected student \nproficiency\", European  Journal of Eng",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 6,
+    "modality": "text"
+  },
+  {
+    "text": "tudy of expected student \nproficiency\", European  Journal of Engineering Education, Vol.28 No. 3 \n(2003) \n[9] Based on: Studies of University of Kansas Center for Research on \nLearning(http://www.kucrl.org/sim/strategies.shtml) \n[10]  D. Dagger, O. Conlan, and V. Wade. Fundamental requirements \n \nof personalised e learning development environments. In G. Richards,  \n \neditor, Proceedings of World Conference on E-Learning in Corporate, \n \nGovernment, Healthcare, and Higher Education 2005, pages 2746\u2013\n \n2754.",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 7,
+    "modality": "text"
+  },
+  {
+    "text": "ment, Healthcare, and Higher Education 2005, pages 2746\u2013\n \n2754. AACE, October 2005 \n[11] WALKER A, Recker M M, Lawless K and Wiley D (2004). \n Collaborative Information Filtering: a review and an educational \n application. International Journal of Artificial Intelligence in \nEducation,  14, 1-26. \n[12]  Nadolski, Rob J., Bert Van den Berg, Adriana J. Berlanga, Hendrik \nDrachsler, Hans GK Hummel, Rob Koper, and Peter B. Sloep. \n\"Simulating light-weight personalised recommender systems in learning \nnetworks:",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 8,
+    "modality": "text"
+  },
+  {
+    "text": "t-weight personalised recommender systems in learning \nnetworks: A case for pedagogy-oriented and rating-based hybrid \nrecommendation strategies.\" Journal of Artificial Societies and Social \nSimulation 12, no. 1 (2009): 4. \n[13] J. Leskovec, L. Adamic and B. Adamic. The Dynamics of Viral \nMarketing. ACM Transactions on the Web (ACM TWEB), 1(1), 2007. \n[14] Improving Recommendation Lists Through Topic Diversification, Cai-\nNicolas Ziegler, Sean M. McNee, Joseph A. Konstan, Georg \nLausen; Proceedings of the 1",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 9,
+    "modality": "text"
+  },
+  {
+    "text": "M. McNee, Joseph A. Konstan, Georg \nLausen; Proceedings of the 14th International World Wide Web \nConference (WWW '05), May 10-14, 2005, Chiba, Japan. \n[15] Resnick, P. & Varian, H. (1997). Recommender systems, Special Issue. \nCommunications of the ACM, 40(3), 56-58 \n[16] Manouselis, Nikos, Riina Vuorikari, and Frans Van Assche. \"Simulated \nanalysis \nof \nMAUT \ncollaborative \nfiltering \nfor \nlearning \nobject \nrecommendation.\" In Proceedings of the 1st Workshop on Social \nInformation Retrieval for Technology ",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 10,
+    "modality": "text"
+  },
+  {
+    "text": "he 1st Workshop on Social \nInformation Retrieval for Technology Enhanced Learning. 2007. \n[17] Sicilia, Miguel-\u00c1ngel, Elena Garc\u00eda-Barriocanal, Salvador S\u00e1nchez-\nAlonso, and Cristian Cechinel. \"Exploring user-based recommender \nresults in large learning object repositories: the case of MERLOT.\" \nProcedia Computer Science 1, no. 2 (2010): 2859-2864. \n[18] Buder, J\u00fcrgen, and Christina Schwind. \"Learning with personalized \nrecommender systems: A psychological view.\" Computers in Human \nBehavior 28, no. 1 (2012",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 11,
+    "modality": "text"
+  },
+  {
+    "text": "sychological view.\" Computers in Human \nBehavior 28, no. 1 (2012): 207-216. \n[19] Verbert, Katrien, Nikos Manouselis, Xavier Ochoa, Martin Wolpers, \nHendrik Drachsler, Ivana Bosnic, and Erik Duval. \"Context-aware \nrecommender systems for learning: a survey and future challenges.\" \n(2012): 1-1. \n[20] Brusilovsky, Peter, and Eva Mill\u00e1n. \"User models for adaptive \nhypermedia and adaptive educational systems.\" In The adaptive web, pp. \n3-53. Springer-Verlag, 2007 \n[21] Nguyen, Loc, and Phung Do. \"Learner model ",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 12,
+    "modality": "text"
+  },
+  {
+    "text": "er-Verlag, 2007 \n[21] Nguyen, Loc, and Phung Do. \"Learner model in adaptive \nlearning.\" World Academy of Science, Engineering and Technology 45 \n(2008): 395-400.  \n[22] Hartigan, John A., and Manchek A. Wong. \"Algorithm AS 136: A k-\nmeans clustering algorithm.\" Journal of the Royal Statistical Society. \nSeries C (Applied Statistics) 28, no. 1 (1979): 100-108. \n[23] R. Agrawal and R. Srikant, \u201cFast Algorithms for Mining Association \nRules,\u201d Proceedings of the 20th International Conference on Very Large \nData",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 13,
+    "modality": "text"
+  },
+  {
+    "text": "eedings of the 20th International Conference on Very Large \nData Bases,1994, pp. 487-499.  \n[24] Lee, Daniel D., and H. Sebastian Seung. \"Learning the parts of objects \nby non-negative matrix factorization.\" Nature 401, no. 6755 (1999): 788-\n791. \n[25] A. Riddell. Factors in\ufb02uencing educational quality and e\ufb00ectiveness in \ndeveloping countries: A review of research. Deutsche Gesellschaft fur \nTechnische Zusammenarbeit (GTZ), Germany, 2008 \n[26] Knowledge for Development: World Development Report 1998/99. \nW",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 14,
+    "modality": "text"
+  },
+  {
+    "text": " Knowledge for Development: World Development Report 1998/99. \nWorld Bank, 1998.",
+    "source": "sample",
+    "page": 8,
+    "chunk_idx": 15,
+    "modality": "text"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "image_path": "D:\\multimodal_rag\\data\\extracted\\images\\sample_page006_img00.png",
+    "source": "sample",
+    "page": 6,
+    "img_idx": 0,
+    "width": 662,
+    "height": 379,
+    "modality": "image",
+    "caption": null
+  },
+  {
+    "image_path": "D:\\multimodal_rag\\data\\extracted\\images\\sample_page006_img01.png",
+    "source": "sample",
+    "page": 6,
+    "img_idx": 1,
+    "width": 670,
+    "height": 378,
+    "modality": "image",
+    "caption": null
+  },
+  {
+    "image_path": "D:\\multimodal_rag\\data\\extracted\\images\\sample_page006_img02.png",
+    "source": "sample",
+    "page": 6,
+    "img_idx": 2,
+    "width": 600,
+    "height": 600,
+    "modality": "image",
+    "caption": null
+  },
+  {
+    "image_path": "D:\\multimodal_rag\\data\\extracted\\images\\sample_page007_img00.png",
+    "source": "sample",
+    "page": 7,
+    "img_idx": 0,
+    "width": 600,
+    "height": 600,
+    "modality": "image",
+    "caption": null
+  }
+]

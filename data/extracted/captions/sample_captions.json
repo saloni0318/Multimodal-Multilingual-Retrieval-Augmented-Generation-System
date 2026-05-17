@@ -1,0 +1,42 @@
+[
+  {
+    "image_path": "D:\\multimodal_rag\\data\\extracted\\images\\sample_page006_img00.png",
+    "source": "sample",
+    "page": 6,
+    "img_idx": 0,
+    "width": 662,
+    "height": 379,
+    "modality": "image",
+    "caption": "The image appears to be a screenshot of an electronic document containing a chart with numerical data, possibly a part of a report or presentation. The chart displays a line graph representing some sort of trend or comparison over time, with the x-axis labeled \"MNP,\" which could stand for Monthly Net Payments or a similar concept. However, without additional context, it's not possible to definitively interpret this abbreviation.\n\nThe y-axis is titled \"Similarity value (MMN),\" suggesting that the chart measures some form of numerical measure related to net payouts on a monthly basis. The x-axis includes values from 1 to 6, which could be months or time intervals, although the precise meaning is unclear without more context.\n\nThe line graph itself has a significant spike at the point labeled \"MNP = 3,\" with a much smaller peak for the subsequent months. Below this line graph, there's a vertical bar graph showing a cumulative total of payments or similar values over time. This second graph shows a steady increase in value from MNP=1 to MNP=5, then a sharp increase at MNP=6, indicating a significant financial transaction or event associated with this month.\n\nThe exact nature of the chart\u2014whether it's related to finance, health, or another domain\u2014is not clear from the image alone. The key data points are the spike in the line graph at \"MNP = 3\" and the large value on the vertical bar graph for MNP=6.\n\nThe image also contains text that appears to be part of a legend or table, with numbers corresponding to the chart. However, without more context or a clearer view of the text, it's not possible to provide a detailed interpretation of these data points."
+  },
+  {
+    "image_path": "D:\\multimodal_rag\\data\\extracted\\images\\sample_page006_img01.png",
+    "source": "sample",
+    "page": 6,
+    "img_idx": 1,
+    "width": 670,
+    "height": 378,
+    "modality": "image",
+    "caption": "The image you've provided appears to be a screenshot of a document containing a bar graph. Here's a detailed description based on what I can see:\n\n- **Title**: There is no visible title within the image provided, so it is unclear what the graph represents or the context in which it was presented.\n\n- **Axes**: The vertical axis of the graph lists values ranging from 0 to 800, with increments of 200. The horizontal axis lists quantities ranging from 0 to 6, with increments of 1, although some labels are cut off, making it difficult to discern the full range or specific intervals.\n\n- **Data**: There is a single red bar on the graph that spans the entire height of the chart, indicating a high value at the top end and zero value below it. The bar is placed over the quantity 1 on the horizontal axis, which corresponds to a value of 800 on the vertical axis.\n\n- **Key Elements**: On the right side of the graph, there are two sets of numbers in red and black text. The set in red reads \"222\" and \"394,\" while the set in black reads \"260\" and \"375.\" This could represent different categories or data series.\n\n- **Key Data Points**: At the top end of the bar, the value is 800, which seems to be the highest point on the graph for the red data set. There are no visible data points below this value, as indicated by the zero on the vertical axis corresponding to the bottom of the bar.\n\n- **Legend or Keys**: There is no visible legend or key within the image provided, so it's unclear what each color represents or what specific information they convey.\n\nThe style of the image suggests it might be part of a financial report or a data analysis presentation, but without additional context, it's difficult to provide more detailed insights into the content and purpose of the graph."
+  },
+  {
+    "image_path": "D:\\multimodal_rag\\data\\extracted\\images\\sample_page006_img02.png",
+    "source": "sample",
+    "page": 6,
+    "img_idx": 2,
+    "width": 600,
+    "height": 600,
+    "modality": "image",
+    "caption": "This is a graphical representation, specifically a radar chart, which displays multiple quantitative variables represented on axes starting from the same point. It appears to show a performance matrix or a multivariate analysis of some sort for an educational or training program, possibly comparing different levels or groups within a learning system.\n\nHere's a detailed description:\n\n- **Title**: There is no visible title in the image provided.\n- **Axes**: The chart has three axes starting from the same point at the bottom center, which represents a common metric for all categories being compared. The axes are labeled with different terms such as \"Strategy,\" \"Learning Time,\" \"Target,\" and \"Clustering.\" Each category is measured in what appears to be points or marks along the axes, suggesting a scoring system for each dimension.\n- **Data Trends**: The chart has multiple color lines representing different groups or entities (not labeled, but might be different teams or categories within the educational context). The lines are spread out across the quadrant created by the four axes, indicating varying performance levels in each category. Some lines show a high score on certain axes and lower scores on others, while one line seems to perform relatively well in all categories compared to the others.\n- **Key Values**: While exact values are not provided, it is evident from the color intensity along the axes that some groups or entities perform better than others in specific areas. For example, there's a group that scores high on \"Learning Time\" and lower on \"Target,\" while another performs well on \"Strategy\" but has low scores on \"Clustering.\"\n\nThe image does not provide enough context to determine the exact nature of the data or the purpose of this chart. It could be used for educational analysis, performance comparison, or for making decisions regarding group performance or allocation within an educational setting."
+  },
+  {
+    "image_path": "D:\\multimodal_rag\\data\\extracted\\images\\sample_page007_img00.png",
+    "source": "sample",
+    "page": 7,
+    "img_idx": 0,
+    "width": 600,
+    "height": 600,
+    "modality": "image",
+    "caption": "This is an image of a colorful hexagonal network diagram, which appears to represent some form of organizational structure or connections between different elements. The diagram has been labeled with various numbers and symbols that are likely indicative of metrics such as connection strength or types of relationships.\n\nAt the center of the diagram, there is a group of circles in red, blue, green, and yellow colors, possibly representing individuals or teams within an organization. Surrounding this central cluster are other circles connected by lines of varying lengths, which likely indicate relationships or connections between these entities. The lines seem to be weighted, with thicker and darker lines suggesting stronger connections and thinner and lighter lines suggesting weaker ones.\n\nThe hexagon itself has a series of concentric rings, and each ring contains different color nodes connected by lines, similar to the central cluster. These outer rings could represent additional groups or levels within the organization.\n\nAt the bottom of the diagram, there are numerical values that might represent scores or some other form of quantitative data related to the connections or performance of these elements. The numbers are accompanied by symbols such as learning time (0-5), skill level (1-12), and others that are not fully legible in this description.\n\nIn the bottom right corner, there is a legend with color codes corresponding to different types of connections or statuses within the organization. However, due to the image's resolution, it's difficult to read all the details accurately.\n\nOverall, the diagram seems to be used for analyzing team dynamics, network structures, or organizational relationships based on a combination of numerical data and visual representations. The specific context or purpose of the diagram is not clear from the image alone."
+  }
+]

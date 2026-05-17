@@ -1,0 +1,34 @@
+[
+  {
+    "text": "000649840X | [6, 6, [41-50], 24240, 20549]",
+    "source": "sample",
+    "page": 7,
+    "table_idx": 0,
+    "row_idx": 0,
+    "modality": "table"
+  },
+  {
+    "text": "002542730X | [4, 5, -, 30380,23783]\nand\n[-, 6, [51-60], 24240, 22802]",
+    "source": "sample",
+    "page": 7,
+    "table_idx": 0,
+    "row_idx": 1,
+    "modality": "table"
+  },
+  {
+    "text": "038550120X | [6, 6, [51-60], 24240, 23783]\nand\n[6, 6, [21-30], 17608, 23783]",
+    "source": "sample",
+    "page": 7,
+    "table_idx": 0,
+    "row_idx": 2,
+    "modality": "table"
+  },
+  {
+    "text": "0060928336 | [-, -, -, 30380,22802]\nand\n[-, 6, [41-50], -, -]",
+    "source": "sample",
+    "page": 7,
+    "table_idx": 0,
+    "row_idx": 3,
+    "modality": "table"
+  }
+]
