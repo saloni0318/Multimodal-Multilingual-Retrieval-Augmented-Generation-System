@@ -1,13 +1,10 @@
 # 🌍 Multimodal Multilingual RAG System
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
-
 ![Ollama](https://img.shields.io/badge/LLM-Ollama-orange)
 ![Qdrant](https://img.shields.io/badge/VectorDB-Qdrant-red)
 
 A RAG (Retrieval Augmented Generation) system that lets you ask questions about PDF documents in **any language** — including Hindi, Malayalam, Tamil, Hinglish, Arabic, and 100+ more. Unlike most RAG systems that only handle English text, this one understands text, tables, and images/charts inside PDFs, and answers in the same language you ask in.
-
-Everything runs **100% locally** on your machine. No OpenAI API, no paid services, no internet required after setup.
 
 ---
 
